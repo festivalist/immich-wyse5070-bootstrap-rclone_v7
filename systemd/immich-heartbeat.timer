@@ -1,0 +1,10 @@
+[Unit]
+Description=Taeglicher Immich Selbsttest
+
+[Timer]
+OnCalendar=*-*-* 09:00:00
+Persistent=true
+RandomizedDelaySec=10min
+
+[Install]
+WantedBy=timers.target

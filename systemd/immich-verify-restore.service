@@ -1,0 +1,12 @@
+[Unit]
+Description=Immich Restore-Probe (Dump in Wegwerf-Datenbank einspielen)
+Requires=docker.service
+After=docker.service
+OnFailure=immich-notify-fail@%n.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/immich/scripts/verify-restore.sh
+Nice=15
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7

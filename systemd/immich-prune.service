@@ -1,0 +1,8 @@
+[Unit]
+Description=Alte Docker-Images aufraeumen
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker image prune -af

@@ -1,0 +1,6 @@
+[Unit]
+Description=Immich Heartbeat und Selbsttest
+
+[Service]
+Type=oneshot
+ExecStart=/opt/immich/scripts/immich-heartbeat.sh

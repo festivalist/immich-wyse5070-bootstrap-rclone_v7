@@ -1,0 +1,6 @@
+[Unit]
+Description=Fehler-Benachrichtigung fuer %i
+
+[Service]
+Type=oneshot
+ExecStart=/opt/immich/scripts/notify.sh "FEHLER: %i ist fehlgeschlagen. Details: journalctl -u %i -n 50" "Immich %H: FEHLER" high

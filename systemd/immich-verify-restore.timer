@@ -1,0 +1,9 @@
+[Unit]
+Description=Monatliche Immich Restore-Probe (1. Sonntag)
+
+[Timer]
+OnCalendar=Sun *-*-01..07 06:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
