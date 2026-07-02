@@ -881,7 +881,7 @@ log()  { printf '[%s] %s\n' "$(date '+%F %T')" "$*"; }
 fail() { printf '[%s] FEHLER: %s\n' "$(date '+%F %T')" "$*" >&2; exit 1; }
 [ "${EUID:-$(id -u)}" -eq 0 ] || fail "Bitte mit sudo ausfuehren."
 
-suggest="immich-$(hostname | tr -cd 'a-z0-9')-$(tr -dc 'a-z0-9' </dev/urandom | head -c 8)"
+suggest="immich-$(hostname | tr -cd 'a-z0-9')-$(tr -dc 'a-z0-9' </dev/urandom | head -c 8 || true)"
 cat <<EOF
 
 === Push-Benachrichtigungen einrichten (ntfy) ===
